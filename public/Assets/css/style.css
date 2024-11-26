@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.btn-primary {
+    background-color: mediumslateblue;
+    border-radius: 15px;
+    border-color: mediumslateblue;
+    padding-inline-start: 15px 30px;
+    color: white;
+}
+
+.btn-outline-danger {
+    background-color: transparent;
+    border-radius: 15px;
+    border-color: #bd0001;
+    padding-inline-start: 15px 30px;
+    color: #bd0001;
+}
+
+.nav-item .nav-link {
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.scroll-nav-active {
+    background-color: white;
+    border-bottom: 1px solid #bd0001;
+}
+
+.text-nav-active {
+    color: black;
+}
+
+#hero {
+    position: relative; /* Memungkinkan penempatan elemen absolut di dalamnya */
+    background-image: url('../../assets/images/lapangansmk.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 730px;
+    overflow: hidden; /* Menghindari elemen gelombang keluar dari #hero */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Mengatur posisi gelombang di bawah */
+    left: 80%;
+    width: 180%; /* Lebar gelombang */
+    height: 150px; /* Tinggi gelombang */
+    background: rgba(13, 33, 218, 0.5); /* Warna gelombang */
+    border-radius: 50%; /* Membuat efek gelombang */
+    animation: wave 4s linear infinite; /* Animasi gelombang */
+    transform: translateX(-80%); /* Memindahkan gelombang ke tengah */
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-80%) translateY(0); /* Posisi awal */
+    }
+    50% {
+        transform: translateX(-80%) translateY(-30px); /* Posisi tertinggi gelombang */
+    }
+    100% {
+        transform: translateX(-80%) translateY(0); /* Kembali ke posisi awal */
+    }
+}
+
+
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.hero-title {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 250px;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.hero-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 75px;
+    font-weight: 60px;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.custom-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card styling */
+.card-program {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Durasi transisi diperpanjang */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect for cards */
+.card-program:hover {
+    transform: translateY(-15px); /* Mengubah gerakan saat hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Adding an overlay effect on hover */
+.card-program::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Durasi transisi diperpanjang */
+}
+
+.card-program:hover::before {
+    opacity: 1;
+}
+
+/* Image inside the card */
+.card-program img {
+    margin-bottom: 15px;
+    transition: transform 0.5s ease; /* Durasi transisi diperpanjang */
+}
+
+.card-program:hover img {
+    transform: scale(1.1);
+}
+
+/* Title of the program */
+.card-program h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Subtle animation for each card */
+.card-program {
+    position: relative;
+    padding: 30px;
+    border-radius: 10px;
+    overflow: hidden; /* Pastikan elemen yang meluap tidak terlihat */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.7; /* Mengatur transparansi background */
+    z-index: 0; /* Memastikan background di bawah konten */
+}
+
+/* Animasi */
+.animate-program {
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards; /* Durasi animasi diperpanjang */
+}
+
+/* Delayed animation for each card */
+.animate-program:nth-child(1) {
+    animation-delay: 0.4s; /* Penundaan diperpanjang */
+}
+
+.animate-program:nth-child(2) {
+    animation-delay: 0.6s; /* Penundaan diperpanjang */
+}
+
+.animate-program:nth-child(3) {
+    animation-delay: 0.8s; /* Penundaan diperpanjang */
+}
+
+.animate-program:nth-child(4) {
+    animation-delay: 1s; /* Penundaan diperpanjang */
+}
+
+#footer {
+    padding: 40x 0;
+    background-color: #f8f9fa; /* Warna latar belakang */
+    border-top: 1px solid #dee2e6; /* Garis pemisah */
+}
+
+#footer h5 {
+    color: #343a40; /* Warna teks judul */
+    font-size: 15px; /* Ukuran font judul */
+}
+
+#footer p {
+    color: #6c757d; /* Warna teks untuk paragraf */
+    font-size: 10px; /* Ukuran font untuk teks */
+}
+
+#footer a {
+    transition: transform 0.2s; /* Animasi saat hover */
+}
+
+#footer a:hover {
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+
+@media (max-width: 576px) {
+    #footer .row {
+        text-align: center; /* Rata tengah pada layar kecil */
+    }
+}
