@@ -86,3 +86,14 @@ Route::delete('/galleries/delete-image/{image}', [GalleryController::class, 'del
 // Tambahkan route untuk upload dan hapus foto
 Route::post('/galleries/{gallery}/upload', [ImageController::class, 'upload'])->name('galleries.upload');
 Route::delete('/galleries/images/{image}', [ImageController::class, 'deleteImage'])->name('galleries.deleteImage');
+
+
+Route::get('storage/{filename}', function ($filename) {
+    $path = storage_path('app/public/' . $filename);
+    
+    if (file_exists($path)) {
+        return response()->file($path);
+    }
+    
+    abort(404);
+});
